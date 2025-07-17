@@ -26,6 +26,44 @@ dotnet build
 dotnet run
 ```
 
+## API Endpoints
+
+### Workflows
+
+- `POST /workflows`  
+  Create a new workflow.  
+  Request body:
+  ```json
+  {
+    "name": "Workflow Name",
+    "states": [ ... ],
+    "actions": [ ... ]
+  }
+  ```
+- `GET /workflows/{id}`  
+  Get a workflow by ID.
+
+### Instances
+
+- `POST /instances`  
+  Create a new instance for a workflow.  
+  Request body:
+  ```json
+  {
+    "workflowId": 1
+  }
+  ```
+- `GET /instances/{id}`  
+  Get an instance by ID.
+- `POST /instances/{id}/changestate`  
+  Change the state of an instance using an action.  
+  Request body:
+  ```json
+  {
+    "actionId": 1
+  }
+  ```
+
 ## Data Model
 
 See the models in `models` for details on properties.
