@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "workflowId": 1,
+    "currentStateId": 3,
+    "history": [
+      {
+        "actionName": "Submit",
+        "timestamp": "2025-07-17T15:03:09.0761251Z"
+      },
+      {
+        "actionName": "Approve",
+        "timestamp": "2025-07-17T15:03:24.3648685Z"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "workflowId": 1,
+    "currentStateId": 0,
+    "history": []
+  },
+  {
+    "id": 3,
+    "workflowId": 4,
+    "currentStateId": 12,
+    "history": [
+      {
+        "actionName": "Submit",
+        "timestamp": "2025-07-17T15:14:24.5513211Z"
+      },
+      {
+        "actionName": "Approve",
+        "timestamp": "2025-07-17T15:14:29.9995218Z"
+      }
+    ]
+  }
+]

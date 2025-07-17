@@ -6,8 +6,12 @@ using System.Linq;
 [Route("workflows")]
 public class WorkflowsController : ControllerBase
 {
-    private static readonly Dictionary<int, Workflow> workflows = new Dictionary<int, Workflow>();
-    private static int nextId = 1;
+    private readonly JsonDbService _jsonDbService;
+
+    public WorkflowsController(JsonDbService jsonDbService)
+    {
+        _jsonDbService = jsonDbService;
+    }
 
     [HttpPost]
     public ActionResult<Workflow> CreateWorkflow([FromBody] Workflow workflow)
@@ -17,8 +21,24 @@ public class WorkflowsController : ControllerBase
             return BadRequest("Workflow cannot be null");
         }
 
-        workflow.id = nextId++;
-        workflows.Add(workflow.id, workflow);
+        var workflows = _jsonDbService.LoadWorkflows();
+
+        int nextId = workflows.Any() ? workflows.Max(w => w.id) + 1 : 1;
+        workflow.id = nextId;
+        var initialStates = workflow.states.Where(s => s.isInitial && s.enabled).ToList();
+
+        if (initialStates.Count != 1)
+        {
+            return BadRequest("There must be exactly one enabled state marked as initial.");
+        }
+
+        workflow.initialStateId = initialStates[0].id;
+
+
+
+        workflows.Add(workflow);
+        _jsonDbService.SaveWorkflows(workflows);
+        
 
         return CreatedAtAction(nameof(GetWorkflow), new { id = workflow.id }, workflow);
     }
@@ -26,7 +46,10 @@ public class WorkflowsController : ControllerBase
     [HttpGet("{id}")]
     public ActionResult<Workflow> GetWorkflow(int id)
     {
-        if (!workflows.TryGetValue(id, out var workflow))
+        var workflows = _jsonDbService.LoadWorkflows();
+        var workflow = workflows.FirstOrDefault(w => w.id == id);
+
+        if (workflow == null)
         {
             return NotFound($"Workflow with id {id} not found");
         }

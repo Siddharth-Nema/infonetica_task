@@ -1,0 +1,198 @@
+[
+  {
+    "id": 1,
+    "name": "Sample Workflow",
+    "states": [
+      {
+        "id": 1,
+        "name": "Drafts",
+        "isInitial": true,
+        "isFinal": false,
+        "enabled": true
+      },
+      {
+        "id": 2,
+        "name": "Submitted",
+        "isInitial": false,
+        "isFinal": false,
+        "enabled": true
+      },
+      {
+        "id": 3,
+        "name": "Approved",
+        "isInitial": false,
+        "isFinal": true,
+        "enabled": true
+      }
+    ],
+    "actions": [
+      {
+        "id": 1,
+        "name": "Submit",
+        "enabled": true,
+        "fromStates": [
+          1
+        ],
+        "toState": 2
+      },
+      {
+        "id": 2,
+        "name": "Approve",
+        "enabled": true,
+        "fromStates": [
+          2
+        ],
+        "toState": 3
+      }
+    ],
+    "initialStateId": 0,
+    "history": []
+  },
+  {
+    "id": 2,
+    "name": "Sample Workflow",
+    "states": [
+      {
+        "id": 1,
+        "name": "Draft",
+        "isInitial": true,
+        "isFinal": false,
+        "enabled": true
+      },
+      {
+        "id": 2,
+        "name": "Submitted",
+        "isInitial": false,
+        "isFinal": false,
+        "enabled": true
+      },
+      {
+        "id": 3,
+        "name": "Approved",
+        "isInitial": false,
+        "isFinal": true,
+        "enabled": true
+      }
+    ],
+    "actions": [
+      {
+        "id": 1,
+        "name": "Submit",
+        "enabled": true,
+        "fromStates": [
+          1
+        ],
+        "toState": 2
+      },
+      {
+        "id": 2,
+        "name": "Approve",
+        "enabled": true,
+        "fromStates": [
+          2
+        ],
+        "toState": 3
+      }
+    ],
+    "initialStateId": 0,
+    "history": []
+  },
+  {
+    "id": 3,
+    "name": "Infonetica Survey",
+    "states": [
+      {
+        "id": 10,
+        "name": "Draft",
+        "isInitial": true,
+        "isFinal": false,
+        "enabled": true
+      },
+      {
+        "id": 11,
+        "name": "Submitted",
+        "isInitial": false,
+        "isFinal": false,
+        "enabled": true
+      },
+      {
+        "id": 12,
+        "name": "Approved",
+        "isInitial": false,
+        "isFinal": true,
+        "enabled": true
+      }
+    ],
+    "actions": [
+      {
+        "id": 1,
+        "name": "Submit",
+        "enabled": true,
+        "fromStates": [
+          10
+        ],
+        "toState": 11
+      },
+      {
+        "id": 2,
+        "name": "Approve",
+        "enabled": true,
+        "fromStates": [
+          11
+        ],
+        "toState": 12
+      }
+    ],
+    "initialStateId": 0,
+    "history": []
+  },
+  {
+    "id": 4,
+    "name": "Infonetica Survey",
+    "states": [
+      {
+        "id": 10,
+        "name": "Draft",
+        "isInitial": true,
+        "isFinal": false,
+        "enabled": true
+      },
+      {
+        "id": 11,
+        "name": "Submitted",
+        "isInitial": false,
+        "isFinal": false,
+        "enabled": true
+      },
+      {
+        "id": 12,
+        "name": "Approved",
+        "isInitial": false,
+        "isFinal": true,
+        "enabled": true
+      }
+    ],
+    "actions": [
+      {
+        "id": 1,
+        "name": "Submit",
+        "enabled": true,
+        "fromStates": [
+          10
+        ],
+        "toState": 11
+      },
+      {
+        "id": 2,
+        "name": "Approve",
+        "enabled": true,
+        "fromStates": [
+          11
+        ],
+        "toState": 12
+      }
+    ],
+    "initialStateId": 10,
+    "history": []
+  }
+]
