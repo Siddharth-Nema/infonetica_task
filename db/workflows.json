@@ -30,22 +30,18 @@
         "id": 1,
         "name": "Submit",
         "enabled": true,
-        "fromStates": [
-          1
-        ],
+        "fromStates": [1],
         "toState": 2
       },
       {
         "id": 2,
         "name": "Approve",
         "enabled": true,
-        "fromStates": [
-          2
-        ],
+        "fromStates": [2],
         "toState": 3
       }
     ],
-    "initialStateId": 0,
+    "initialStateId": 1,
     "history": []
   },
   {
@@ -79,22 +75,18 @@
         "id": 1,
         "name": "Submit",
         "enabled": true,
-        "fromStates": [
-          1
-        ],
+        "fromStates": [1],
         "toState": 2
       },
       {
         "id": 2,
         "name": "Approve",
         "enabled": true,
-        "fromStates": [
-          2
-        ],
+        "fromStates": [2],
         "toState": 3
       }
     ],
-    "initialStateId": 0,
+    "initialStateId": 1,
     "history": []
   },
   {
@@ -128,22 +120,18 @@
         "id": 1,
         "name": "Submit",
         "enabled": true,
-        "fromStates": [
-          10
-        ],
+        "fromStates": [10],
         "toState": 11
       },
       {
         "id": 2,
         "name": "Approve",
         "enabled": true,
-        "fromStates": [
-          11
-        ],
+        "fromStates": [11],
         "toState": 12
       }
     ],
-    "initialStateId": 0,
+    "initialStateId": 1,
     "history": []
   },
   {
@@ -177,18 +165,14 @@
         "id": 1,
         "name": "Submit",
         "enabled": true,
-        "fromStates": [
-          10
-        ],
+        "fromStates": [10],
         "toState": 11
       },
       {
         "id": 2,
         "name": "Approve",
         "enabled": true,
-        "fromStates": [
-          11
-        ],
+        "fromStates": [11],
         "toState": 12
       }
     ],

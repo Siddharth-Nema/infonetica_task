@@ -84,6 +84,10 @@ public class InstancesController : ControllerBase
         if (action == null)
             return BadRequest("Invalid action for the current state.");
 
+        var targetState = workflow.states.FirstOrDefault(s => s.id == action.toState);
+        if (targetState == null || !targetState.enabled)
+            return BadRequest("Target state is not enabled.");
+
         // Update instance state and log history
         instance.currentStateId = action.toState;
         instance.history.Add(new HistoryEntry
