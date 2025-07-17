@@ -7,5 +7,3 @@ public class State
     public bool enabled { get; set; }
 }
 
-
-

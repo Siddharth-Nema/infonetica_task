@@ -52,8 +52,6 @@ public class JsonDbService
         }
     }
 
-    // Optional async versions for better scalability if you want:
-
     public async Task<List<Workflow>> LoadWorkflowsAsync()
     {
         using var stream = File.OpenRead(workflowsPath);
